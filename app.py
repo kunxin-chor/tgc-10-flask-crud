@@ -13,9 +13,11 @@ print(database)
 def home():
     return render_template('home.template.html')
 
+
 @app.route('/customers')
 def show_customers():
-    return render_template('customers.template.html')
+    return render_template('customers.template.html',
+                           customers=database)
 
 
 # "magic code" -- boilerplate
