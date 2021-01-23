@@ -45,7 +45,10 @@ def process_add_customer():
 
     database.append(new_customer)
 
-    return "data recieved"
+    with open('customers.json', 'w') as fp:
+        json.dump(database, fp)
+
+    return redirect(url_for('show_customers'))
 
 # "magic code" -- boilerplate
 if __name__ == '__main__':
